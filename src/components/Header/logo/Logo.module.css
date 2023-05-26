@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+}
+.textFirst{
+font-family: 'Bangers', cursive;
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 1.35;
+text-decoration: none;
+margin-left: 8px;
+
+color: #CA2906;
+}
+.textSecond{
+    color: #000000;}
+
+.container:hover{
+        transform: scale(1.2);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }

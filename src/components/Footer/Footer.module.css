@@ -1,0 +1,21 @@
+.footer{
+
+    bottom: 0;
+    background-image: linear-gradient(
+        to top left,
+        
+        #CA2906 50%,
+        transparent 50%
+      );
+      height: 40px;
+      width: 100vw;
+      padding: 10px 0 ;
+
+}
+.text{
+    font-size: 16px;
+    line-height: 22px;
+    text-align: right;
+    color: #FFFFFF;
+    padding-right: 10px;
+}

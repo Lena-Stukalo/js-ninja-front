@@ -1,0 +1,67 @@
+.title{
+    font-family: 'Bangers', cursive;
+    font-weight: 400;
+    color: #CA2906;
+    margin-bottom: 40px;
+    font-size: 40px;
+line-height: 1.35;
+}
+.info{
+}
+.infoTitle{
+    font-family: 'Bangers', cursive;
+    font-weight: 400;
+    color: #CA2906;
+    margin-bottom: 20px;
+    font-size: 26px;
+line-height: 1.35;
+}
+.name{
+    font-weight: 600;
+    color: #2a2a2a;
+  
+    font-size: 18px;
+line-height: 1.35;
+width: 500px;
+text-align: left;
+margin: 0 auto;
+margin-bottom: 10px;
+}
+.description{
+    font-weight: 400;
+    color: #2a2a2a;
+    
+    font-size: 16px;
+line-height: 1.35;
+width: 500px;
+text-align: left;
+margin: 0 auto;
+margin-bottom: 10px;
+}
+.phrase{
+    font-family: 'Bangers', cursive;
+    font-weight: 400;
+    color: #CA2906;
+    margin-bottom: 40px;
+    font-size: 26px;
+line-height: 1.35;
+}
+.powers{
+    font-weight: 400;
+    color: #2a2a2a;
+    font-size: 16px;
+line-height: 1.35;
+width: 500px;
+text-align: left;
+margin: 0 auto;
+margin-bottom: 20px;
+}
+.field{
+ 
+    color: #CA2906;
+    margin-bottom: 10px;
+    font-size: 16px;
+line-height: 1.35;
+width: 500px;
+text-align: left;
+}
