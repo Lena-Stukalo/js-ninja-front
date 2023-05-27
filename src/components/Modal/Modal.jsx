@@ -2,36 +2,33 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import css from './Modal.module.css'
-import Form from '../Form/Form';
-
-
 const modalRoot = document.querySelector('#root-modal');
 
-export default function Modal({
-  children,
-  height,
-  heightContent,
-  width,
-  padding,
-  paddingTab,
-  color,
-}) {
- 
+export default function Modal({children,toggleModal}) {
+  const handleKeyDown = e => {
+    if (e.code === 'Escape') {
+      toggleModal();
+    }
+  };
 
+  const handleBackdropClick = e => {
+    if (e.currentTarget === e.target) {
+      toggleModal();
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  });
 
- 
   return createPortal(
-    <div className={css.overlay} onClick={()=>{}} height={height} color={color}>
+    <div className={css.overlay} onClick={handleBackdropClick}>
       <div className={css.content}
-        heightContent={heightContent}
-        width={width}
-        padding={padding}
-        paddingTab={paddingTab}
       >
         
             <button className={css.button}
               type="button"
-              onClick={()=>{}}
+              onClick={toggleModal}
               aria-label="close Modal Window"
             >
              <svg className={css.svg} version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32">

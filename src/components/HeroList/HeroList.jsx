@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import HeroCard from '../../components/HeroCard/HeroCard';
 import css from './HeroList.module.css'
 

@@ -3,21 +3,20 @@ import { Suspense } from 'react';
 import { Header } from '../Header/Header';
 import Footer from '../Footer/Footer';
 import css from'./LayOut.module.css';
-import Modal from '../Modal/Modal';
-import ModalDelete from '../ModalDelete/ModalDelete';
+
 
 const LayOut = () => {
     return (
         <div className={css.LayOut}>
-          <Header/>
+          <Header />
           <div className={css.container}>
           <Suspense>
-        <Outlet />
+        <Outlet/>
       </Suspense>
           </div>
-
 <Footer/>
           </div>
       );
 };
+
 export default LayOut;

@@ -4,7 +4,7 @@ const Gallery = ({images, nickname}) => {
     <ul className={css.galleryList}>
             {images.map(img => {
               return (
-                <li className={css.galleryItem}>
+                <li className={css.galleryItem} key={img}>
                     <img src={`https://js-ninja-back.onrender.com/${img}`} alt={nickname} className={css.galleryImg}/>
                     
                 </li>

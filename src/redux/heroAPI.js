@@ -8,39 +8,33 @@ export const herosApi = createApi({
   tagTypes: ['Contact'],
   endpoints: builder => ({
     getAllHeros: builder.query({
-      query: () => `/heros`,
+      query: ({page ,limit}) => `/heros?page=${page}&limit=${limit}`,
       providesTags: ['Hero'],
     }),
     getHeroById:  builder.query({
-        query: (heroID) => `/heros/${heroID}`,
+        query: (heroId) => `/heros/${heroId}`,
         providesTags: ['Hero'],
       }),
     deleteHero: builder.mutation({
-      query: heroID => ({
-        url: `/heros/${heroID}`,
+      query: (heroId) => ({
+        url: `/heros/${heroId}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Hero'],
     }),
     createHero: builder.mutation({
-      query: ({ name, numder }) => ({
+      query: (data) => ({
         url: `/heros`,
         method: 'POST',
-        body: {
-          name: name,
-          phone: numder,
-        },
+        body: data,
       }),
       invalidatesTags: ['Hero'],
     }),
     updateHero: builder.mutation({
-        query: (heroID,{name , numder}) => ({
+        query: ({heroID,data}) => ({
             url: `/heros/${heroID}`,
             method: 'PATCH',
-            body: {
-                name: name,
-                phone: numder,
-              },
+            body:data,
           }),
           invalidatesTags: ['Contact'],
       }),
