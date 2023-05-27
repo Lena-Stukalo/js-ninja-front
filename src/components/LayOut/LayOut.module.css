@@ -1,7 +1,7 @@
 .LayOut {
     text-align: center;
     background-image:url(../../images/super_woman.svg),url(../../images/superhero.svg); 
-    background-position:left bottom, top 60px right;
+    background-position:left bottom, top 70px right;
     background-repeat: no-repeat;
     background-size: 300px, 100px;
 

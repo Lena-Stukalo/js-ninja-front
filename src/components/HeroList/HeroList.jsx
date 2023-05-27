@@ -8,8 +8,8 @@ const HeroList = ({heros}) => {
             {heros.map(hero => {
               return (
                  <NavLink
-                 key={hero.id}
-                 to={`/${hero.id}`}
+                 key={hero._id}
+                 to={`/${hero._id}`}
                  className={css.heroItem}
                  >
                     <HeroCard img={hero.images[0]} nickname={hero.nickname}></HeroCard>
