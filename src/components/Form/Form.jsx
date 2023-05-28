@@ -28,6 +28,7 @@ const Form=({hero, operation, closeModal,params})=>{
         if(hero){
             const data=new FormData(event.target)
             operation({heroID:params,data})
+            
         }else{
             operation(new FormData(event.target))
         }

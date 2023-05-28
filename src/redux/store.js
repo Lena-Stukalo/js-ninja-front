@@ -4,12 +4,8 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 export const heroSlice = createSlice({
   name: 'heros',
   initialState: {
-    filter: '',
   },
   reducers: {
-    ChangeFilter(state, action) {
-      state.filter = action.payload;
-    },
   },
 });
 

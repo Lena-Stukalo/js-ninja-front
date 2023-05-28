@@ -17,7 +17,7 @@ const Hero = () => {
         setShowModal((prevState) => !prevState)
     }
     const {heroId}=useParams()
-    const { data, isFetching } = useGetHeroByIdQuery(heroId);
+    const { data, isFetching} = useGetHeroByIdQuery(heroId);
     let hero= {
         images:[]
     };

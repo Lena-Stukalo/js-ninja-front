@@ -5,7 +5,7 @@ export const herosApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://js-ninja-back.onrender.com/api',
   }),
-  tagTypes: ['Contact'],
+  tagTypes: ['Hero'],
   endpoints: builder => ({
     getAllHeros: builder.query({
       query: ({page ,limit}) => `/heros?page=${page}&limit=${limit}`,
@@ -36,7 +36,7 @@ export const herosApi = createApi({
             method: 'PATCH',
             body:data,
           }),
-          invalidatesTags: ['Contact'],
+          invalidatesTags: ['Hero'],
       }),
   }),
 });
