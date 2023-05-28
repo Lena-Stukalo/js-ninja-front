@@ -9,6 +9,7 @@ import ModalDelete from '../../components/ModalDelete/ModalDelete';
 import Modal from '../../components/Modal/Modal';
 import Form from '../../components/Form/Form';
 import {useUpdateHeroMutation} from '../../redux/heroAPI'
+import Loader from '../../components/Loader/Loader';
 const Hero = () => {
     const [showDeleteModal, setShowDeleteModal]=useState(false)
     const [showUpdateModal, setShowUpadeModal]=useState(false)
@@ -25,7 +26,7 @@ const Hero = () => {
         hero = data;
       }
     return (
-        <section className={css.container}>
+        data?<section className={css.container}>
             <h2 className={css.title}>{hero.nickname}</h2>
             <Info realName={hero.real_name} description={hero.origin_description} superpowers={hero.superpowers}/>
             <p className={css.phrase}>{hero.catch_phrase}</p>
@@ -36,7 +37,7 @@ const Hero = () => {
           </div>
         {showDeleteModal&&<ModalDelete heroId={heroId} toggleModal={()=>{toggleModal(setShowDeleteModal)}}/>}
         {showUpdateModal&&<Modal toggleModal={()=>{toggleModal(setShowUpadeModal)}}><Form hero={hero} operation={updateHero} params={heroId} closeModal={()=>{toggleModal(setShowUpadeModal)}}></Form></Modal>}
-        </section>
+        </section>:<Loader/>
       );
 };
 export default Hero;
