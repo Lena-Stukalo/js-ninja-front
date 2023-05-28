@@ -5,6 +5,7 @@ import css from './HomePage.module.css'
 import {useGetAllHerosQuery,useCreateHeroMutation} from '../../redux/heroAPI'
 import Modal from '../../components/Modal/Modal';
 import Form from '../../components/Form/Form';
+import Loader from '../../components/Loader/Loader';
 
 const Home = () => {
     const [showModal, setShowModal]=useState(false)
@@ -28,7 +29,7 @@ const Home = () => {
         countitems=((limit*(page+1))<data.total)
       }
     return (
-        data&&<section className={css.container}>
+        data?<section className={css.container}>
           <h1 className={css.title}>Our Stars</h1>
           <Button text={'Add Hero'} todo={toggleModal} type={'button'}/>
           <HeroList heros={heros}/>
@@ -36,9 +37,8 @@ const Home = () => {
          {page!==0 &&<Button text={'Back'} todo={handleLoadPrev} type={'button'}/>}
          {countitems &&<Button text={'Next'} todo={handleLoadmore} type={'button'}/>}
         </div>
-        
         {showModal&&<Modal toggleModal={toggleModal}><Form operation={createHero} closeModal={toggleModal}/></Modal>}
-        </section>
+        </section>:<Loader></Loader>
       );
 };
 export default Home;
